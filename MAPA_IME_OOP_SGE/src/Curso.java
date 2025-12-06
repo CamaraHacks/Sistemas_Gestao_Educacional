@@ -1,4 +1,4 @@
-public abstract class Curso {
+public abstract class Curso implements Relatorio {
     private String nome;
     private String codigo;
     private int cargaHoraria;
@@ -21,7 +21,7 @@ public abstract class Curso {
         return cargaHoraria;
     }
 
-    public abstract String detalharCurso();
+    public abstract String gerarRelatorio();
 
     @Override
     public String toString() {

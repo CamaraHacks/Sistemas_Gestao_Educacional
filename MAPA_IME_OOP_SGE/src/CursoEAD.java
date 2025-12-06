@@ -11,9 +11,9 @@ public class CursoEAD extends Curso {
     }
 
     @Override
-    public String detalharCurso() {
-        return "Curso EAD: " + getNome() + " (Cód: " + getCodigo() + ")\n" +
-               "Carga Horária: " + getCargaHoraria() + " horas\n" +
-               "Plataforma: " + plataformaVirtual;
+    public String gerarRelatorio() {
+        return "Relatório do Curso EAD: " + getNome() + " (Cód: " + getCodigo() + ")\n" +
+               " - Carga Horária: " + getCargaHoraria() + " horas\n" +
+               " - Plataforma: " + plataformaVirtual;
     }
 }

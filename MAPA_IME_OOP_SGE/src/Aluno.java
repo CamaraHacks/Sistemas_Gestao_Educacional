@@ -1,16 +1,24 @@
-public class Aluno {
-    private String nome;
+public class Aluno extends Usuario implements Autenticacao, Relatorio {
     private String matricula;
     private String curso;
 
-    public Aluno(String nome, String matricula, String curso) {
-        this.nome = nome;
+    public Aluno(String nome, String login, String senha, String matricula, String curso) {
+        super(nome, login, senha);
         this.matricula = matricula;
         this.curso = curso;
     }
 
-    public String getNome() {
-        return nome;
+    @Override
+    public boolean autenticar(String login, String senha) {
+        return getLogin().equals(login) && getSenha().equals(senha);
+    }
+
+    @Override
+    public String gerarRelatorio() {
+        return "Relatório do Aluno:\n" +
+               " - Nome: " + getNome() + "\n" +
+               " - Matrícula: " + getMatricula() + "\n" +
+               " - Curso: " + getCurso();
     }
 
     public String getMatricula() {
@@ -23,10 +31,10 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{"
-               + "nome='" + nome + "'\''" +
-               ", matricula='" + matricula + "'\''" +
-               ", curso='" + curso + "'\''" +
+        return "Aluno{" +
+               "nome='" + getNome() + '\'' +
+               ", matricula='" + matricula + '\'' +
+               ", curso='" + curso + '\'' +
                '}';
     }
 }

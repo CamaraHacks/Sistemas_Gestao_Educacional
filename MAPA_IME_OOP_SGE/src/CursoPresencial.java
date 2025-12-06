@@ -11,9 +11,9 @@ public class CursoPresencial extends Curso {
     }
 
     @Override
-    public String detalharCurso() {
-        return "Curso Presencial: " + getNome() + " (Cód: " + getCodigo() + ")\n" +
-               "Carga Horária: " + getCargaHoraria() + " horas\n" +
-               "Sala: " + sala;
+    public String gerarRelatorio() {
+        return "Relatório do Curso Presencial: " + getNome() + " (Cód: " + getCodigo() + ")\n" +
+               " - Carga Horária: " + getCargaHoraria() + " horas\n" +
+               " - Sala: " + sala;
     }
 }

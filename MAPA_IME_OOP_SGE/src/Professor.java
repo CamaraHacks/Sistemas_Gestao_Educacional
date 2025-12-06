@@ -1,16 +1,24 @@
-public class Professor {
-    private String nome;
+public class Professor extends Usuario implements Autenticacao, Relatorio {
     private String especialidade;
     private String registro;
 
-    public Professor(String nome, String especialidade, String registro) {
-        this.nome = nome;
+    public Professor(String nome, String login, String senha, String especialidade, String registro) {
+        super(nome, login, senha);
         this.especialidade = especialidade;
         this.registro = registro;
     }
 
-    public String getNome() {
-        return nome;
+    @Override
+    public boolean autenticar(String login, String senha) {
+        return getLogin().equals(login) && getSenha().equals(senha);
+    }
+
+    @Override
+    public String gerarRelatorio() {
+        return "Relatório do Professor:\n" +
+               " - Nome: " + getNome() + "\n" +
+               " - Especialidade: " + getEspecialidade() + "\n" +
+               " - Registro: " + getRegistro();
     }
 
     public String getEspecialidade() {
@@ -23,10 +31,10 @@ public class Professor {
 
     @Override
     public String toString() {
-        return "Professor{"
-               + "nome='" + nome + "'" + 
-               ", especialidade='" + especialidade + "'" + 
-               ", registro='" + registro + "'" + 
+        return "Professor{" +
+               "nome='" + getNome() + '\'' +
+               ", especialidade='" + especialidade + '\'' +
+               ", registro='" + registro + '\'' +
                '}';
     }
 }
