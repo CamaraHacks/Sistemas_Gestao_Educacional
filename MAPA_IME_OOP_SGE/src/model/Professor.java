@@ -1,3 +1,8 @@
+package model;
+
+import interfaces.Autenticacao;
+import interfaces.Relatorio;
+
 public class Professor extends Usuario implements Autenticacao, Relatorio {
     private String especialidade;
     private String registro;

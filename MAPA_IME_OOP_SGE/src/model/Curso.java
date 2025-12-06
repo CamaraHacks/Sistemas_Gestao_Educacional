@@ -1,3 +1,7 @@
+package model;
+
+import interfaces.Relatorio;
+
 public abstract class Curso implements Relatorio {
     private String nome;
     private String codigo;
