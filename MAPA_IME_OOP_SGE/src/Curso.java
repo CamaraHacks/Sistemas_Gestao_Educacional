@@ -1,4 +1,4 @@
-public class Curso {
+public abstract class Curso {
     private String nome;
     private String codigo;
     private int cargaHoraria;
@@ -20,6 +20,8 @@ public class Curso {
     public int getCargaHoraria() {
         return cargaHoraria;
     }
+
+    public abstract String detalharCurso();
 
     @Override
     public String toString() {
